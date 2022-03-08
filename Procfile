@@ -1,0 +1,1 @@
+web: gunicorn djangoice.wsgi --log-file -
