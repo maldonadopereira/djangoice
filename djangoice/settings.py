@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     #apps locais
-    'usuarios',
+    'users.apps.UsersConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -94,7 +95,7 @@ WSGI_APPLICATION = 'djangoice.wsgi.application'
 DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'djangoice',
+            'NAME': 'djangoice2',
             'USER': 'david',
             'PASSWORD': '3284',
             'HOST': '127.0.0.1',
@@ -147,3 +148,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# User Model
+
+AUTH_USER_MODEL = 'users.User'
