@@ -23,6 +23,8 @@ def profile(request):
     else:
         return redirect('account_login'),
 
+
+
 def completa_cadastro(request):
     return render(request, 'completa_cadastro.html')
 
@@ -37,6 +39,9 @@ def atualiza_cadastro(request):
         u.telefone = request.POST['telefone']
         u.cep = request.POST['cep']
         u.endereco = request.POST['endereco']
-
+        if 'foto_user' in request.FILES:
+            u.foto_user = request.FILES['foto_user']
         u.save()
         return redirect('profile')
+    else:
+        return render(request, 'completa_cadastro.html')

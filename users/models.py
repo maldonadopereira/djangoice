@@ -3,6 +3,7 @@ from django.db import models
 
 
 class User(AbstractUser):
-    telefone = models.CharField(max_length=14, default='')
+    telefone = models.CharField(max_length=15, default='')
     cep = models.CharField(max_length=10, default='')
     endereco = models.CharField(max_length=150, default='')
+    foto_user = models.ImageField(upload_to='fotos/%d/%m/%Y')
