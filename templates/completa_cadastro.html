@@ -27,42 +27,23 @@
 
                 </div>
             </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-4 col-xlg-3 col-md-5">
-                        <div class="card">
-                            <div class="card-body profile-card">
-                                <center class="mt-4"> <img src="{% static 'images/users/5.jpg' %}"
-                                        class="rounded-circle" width="150" />
-                                    <h4 class="card-title mt-2">{{ user.username | capfirst}}</h4>
-                                    <h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
-                                    <div class="row justify-content-center">
-                                        <div class="col-4">
-                                            <a href="javascript:void(0)" class="link">
-                                                <i class="icon-people" aria-hidden="true"></i>
-                                                <span class="font-normal">254</span>
-                                            </a></div>
-                                        <div class="col-4">
-                                            <a href="javascript:void(0)" class="link">
-                                                <i class="icon-picture" aria-hidden="true"></i>
-                                                <span class="font-normal">54</span>
-                                            </a></div>
-                                    </div>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
+
+
                     <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-body">
                                 <form class="form-horizontal form-material mx-2">
                                     <div class="form-group">
+                                        <label class="col-md-12 mb-0">Primeiro Nome</label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder='{{user.first_name}}'
+                                                class="form-control ps-0 form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label class="col-md-12 mb-0">Nome Completo</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder='{{user.full_name}}'
+                                            <input type="text" placeholder='{{user.last_name}}'
                                                 class="form-control ps-0 form-control-line">
                                         </div>
                                     </div>
@@ -85,32 +66,25 @@
                                     <div class="form-group">
                                         <label class="col-md-12 mb-0">Telefone</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="123 456 7890"
-                                                class="form-control ps-0 form-control-line">
+                                           <input type="text" class="form-control" onkeypress="$(this).mask('(00) 00000-0000')">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-12 mb-0">Message</label>
+                                        <label class="col-md-12 mb-0">CEP</label>
                                         <div class="col-md-12">
-                                            <textarea rows="5" class="form-control ps-0 form-control-line"></textarea>
+                                            <input type="text" class="form-control" onkeypress="$(this).mask('00.000-000')">
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-12">Select Country</label>
-                                        <div class="col-sm-12 border-bottom">
-                                            <select class="form-select shadow-none border-0 ps-0 form-control-line">
-                                                <option>London</option>
-                                                <option>India</option>
-                                                <option>Usa</option>
-                                                <option>Canada</option>
-                                                <option>Thailand</option>
-                                            </select>
+                                     <div class="form-group">
+                                        <label class="col-md-12 mb-0">Endereço</label>
+                                        <div class="col-md-12">
+                                           <input type="text" class="form-control ps-0 form-control-line", maxlength="150">
                                         </div>
                                     </div>
+
                                     <div class="form-group">
                                         <div class="col-sm-12 d-flex">
-                                            <button class="btn btn-success mx-auto mx-md-0 text-white">Update
-                                                Profile</button>
+                                            <button class="btn btn-success mx-auto mx-md-0 text-white">Atualizar Cadastro</button>
                                         </div>
                                     </div>
                                 </form>

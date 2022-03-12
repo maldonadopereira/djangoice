@@ -127,7 +127,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'pt-br'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -156,3 +156,15 @@ AUTH_USER_MODEL = 'users.User'
 ACCOUNT_FORMS = {
 'signup': 'users.forms.CustomSignupForm',
 }
+
+# Só precisa digitar a senha uma vez
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+# Não precisa de username
+ACCOUNT_USERNAME_REQUIRED = True
+# Método de autenticação: email
+ACCOUNT_AUTHENTICATION_METHOD = "username"
+# Email obrigatório
+ACCOUNT_EMAIL_REQUIRED = True
+# Email único
+ACCOUNT_UNIQUE_EMAIL = True
+

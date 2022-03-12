@@ -18,4 +18,7 @@ def profile(request):
         return render(request, 'profile.html')
 
     else:
-        return redirect('account_login')
+        return redirect('account_login'),
+
+def completa_cadastro(request):
+    return render(request, 'completa_cadastro.html')
