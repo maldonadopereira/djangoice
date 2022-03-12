@@ -1,4 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+
+from users.models import User
+
 
 def index(request):
     return render(request, 'index.html')
@@ -22,3 +25,18 @@ def profile(request):
 
 def completa_cadastro(request):
     return render(request, 'completa_cadastro.html')
+
+
+def atualiza_cadastro(request):
+    if request.method =='POST':
+        user_id = request.POST['user_id']
+        u = User.objects.get(pk=user_id)
+        u.first_name = request.POST['first_name']
+        u.last_name = request.POST['last_name']
+        u.email = request.POST['email']
+        u.telefone = request.POST['telefone']
+        u.cep = request.POST['cep']
+        u.endereco = request.POST['endereco']
+
+        u.save()
+        return redirect('profile')

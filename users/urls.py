@@ -8,5 +8,6 @@ urlpatterns = [
     path('erro_404', views.erro_404, name='404'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('accounts/profile/', views.profile, name='profile'),
-    path('cadastro', views.completa_cadastro, name='completa_cadastro')
+    path('cadastro', views.completa_cadastro, name='completa_cadastro'),
+    path('atualiza_cadastro', views.atualiza_cadastro, name='atualiza_cadastro')
 ]
