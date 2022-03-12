@@ -21,27 +21,32 @@ def profile(request):
         return render(request, 'profile.html')
 
     else:
-        return redirect('account_login'),
+        return redirect('index'),
 
 
 
 def completa_cadastro(request):
-    return render(request, 'completa_cadastro.html')
-
+    if request.user.is_authenticated:
+        return render(request, 'completa_cadastro.html')
+    else:
+        return redirect('index')
 
 def atualiza_cadastro(request):
-    if request.method =='POST':
-        user_id = request.POST['user_id']
-        u = User.objects.get(pk=user_id)
-        u.first_name = request.POST['first_name']
-        u.last_name = request.POST['last_name']
-        u.email = request.POST['email']
-        u.telefone = request.POST['telefone']
-        u.cep = request.POST['cep']
-        u.endereco = request.POST['endereco']
-        if 'foto_user' in request.FILES:
-            u.foto_user = request.FILES['foto_user']
-        u.save()
-        return redirect('profile')
+    if request.user.is_authenticated:
+        if request.method =='POST':
+            user_id = request.POST['user_id']
+            u = User.objects.get(pk=user_id)
+            u.first_name = request.POST['first_name']
+            u.last_name = request.POST['last_name']
+            u.email = request.POST['email']
+            u.telefone = request.POST['telefone']
+            u.cep = request.POST['cep']
+            u.endereco = request.POST['endereco']
+            if 'foto_user' in request.POST:
+                u.foto_user = request.POST['foto_user']
+            u.save()
+            return redirect('profile')
+        else:
+            return render(request, 'completa_cadastro.html')
     else:
-        return render(request, 'completa_cadastro.html')
+        return redirect('index')

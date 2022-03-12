@@ -33,25 +33,13 @@
                         <div class="card">
                             <div class="card-body profile-card">
                                 <center class="mt-4">
-                                    {% if user.foto == '' %}
+                                    {% if u.foto_user == '' %}
                                     <img src="{% static 'images/users/blank.png' %}" alt=""/>
                                     {% else %}
-                                     <img src="{{ user.foto }}" height="150" width="150" />
+                                     <img src="{{ user.foto_user }}" height="150" width="150" alt="foto aqui"/>
                                     {% endif %}
                                     <h4 class="card-title mt-2">{{user.first_name | capfirst}}</h4>
-                                    <h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
-                                    <div class="row justify-content-center">
-                                        <div class="col-4">
-                                            <a href="javascript:void(0)" class="link">
-                                                <i class="icon-people" aria-hidden="true"></i>
-                                                <span class="font-normal">254</span>
-                                            </a></div>
-                                        <div class="col-4">
-                                            <a href="javascript:void(0)" class="link">
-                                                <i class="icon-picture" aria-hidden="true"></i>
-                                                <span class="font-normal">54</span>
-                                            </a></div>
-                                    </div>
+
                                 </center>
                             </div>
                         </div>
@@ -89,10 +77,10 @@
                                     <div class="form-group">
                                         <label class="col-md-12 mb-0">Telefone</label>
                                         <div class="col-md-12">
-                                        <label class="col-md-12 mb-0">{{user.telefone}}</label>
-
+                                            <label class="col-md-12 mb-0">{{user.telefone}}</label>
                                         </div>
                                     </div>
+
 
                                 </form>
                             </div>
@@ -100,17 +88,6 @@
                     </div>
                     <!-- Column -->
                 </div>
-                <!-- Row -->
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->

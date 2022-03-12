@@ -32,7 +32,7 @@
                     <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-horizontal form-material mx-2" action="{% url 'atualiza_cadastro' %}" method="post" >
+                                <form class="form-horizontal form-material mx-2" action="{% url 'atualiza_cadastro' %}" method="post" enctype="multipart/form-data" >
                                     {% csrf_token %}
                                     <input type="text" id="user_id" class="form-control" name="user_id" value="{{user.id}}" hidden>
 
@@ -82,9 +82,10 @@
                                                 id="endereco" value="{{user.endereco}}">
                                         </div>
                                     </div>
+
                                     <div class="form-group">
                                         <label for="file"><b>Adicionar foto</b></label>
-                                        <input type="file" class="form-control" name="foto_user">
+                                        <input type="file" class="form-control" name="foto_user" id="foto_user">
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-12 d-flex">
@@ -97,17 +98,7 @@
                     </div>
                     <!-- Column -->
                 </div>
-                <!-- Row -->
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
+
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->

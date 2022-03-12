@@ -152,9 +152,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # User Model
 
 AUTH_USER_MODEL = 'users.User'
-ACCOUNT_FORMS = {
-'signup': 'users.forms.CustomSignupForm',
-}
 
 # Só precisa digitar a senha uma vez
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
