@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    #allauth
+    #3rd party
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -95,7 +96,7 @@ WSGI_APPLICATION = 'djangoice.wsgi.application'
 DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'djangoice2',
+            'NAME': 'djangoice',
             'USER': 'david',
             'PASSWORD': '3284',
             'HOST': '127.0.0.1',
@@ -126,7 +127,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -152,3 +153,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # User Model
 
 AUTH_USER_MODEL = 'users.User'
+ACCOUNT_FORMS = {
+'signup': 'users.forms.CustomSignupForm',
+}
