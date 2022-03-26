@@ -9,7 +9,7 @@ from users.models import User
 
 @login_required
 def add_produto(request):
-    if not request.user.has_perm('global_permissions.incluir_produto'):
+    if not request.user.has_perm('global_permissions.manipular_produto'):
         raise PermissionDenied
     else:
         if request.method == 'POST':
@@ -29,3 +29,23 @@ def add_produto(request):
             }
             return render(request, 'produtos/add_produto.html', context=context)
 
+def edit_produto(request):
+    if not request.user.has_perm('global_permissions.manipular_produto'):
+        raise PermissionDenied
+    else:
+        if request.method == 'POST':
+            form = AdicionarProduto(request.POST)
+            if form.is_valid():
+                produto = form.save()
+                form = AdicionarProduto()
+            context = {
+                'form': form
+            }
+            return render(request, 'produtos/add_produto.html', context=context)
+
+        else:
+            form = AdicionarProduto()
+            context = {
+                'form': form
+            }
+            return render(request, 'produtos/add_produto.html', context=context)
