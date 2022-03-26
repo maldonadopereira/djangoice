@@ -43,9 +43,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'global_permissions',
     #apps locais
     'users.apps.UsersConfig',
-
+    'produtos'
 ]
 
 MIDDLEWARE = [
@@ -164,3 +165,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 # Email único
 ACCOUNT_UNIQUE_EMAIL = True
 
+
+
+#Crispy Forms
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

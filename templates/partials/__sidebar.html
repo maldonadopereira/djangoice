@@ -7,29 +7,82 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <!-- User Profile-->
+                        <!-- USUÁRIO LOGADO-->
                         {% if user.is_authenticated %}
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{% url 'index' %}" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                    aria-hidden="true"></i><span class="hide-menu">Home</span></a></li>
+                        <!---HOME--->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'index' %}" aria-expanded="false">
+                                <i class="me-3 fa fa-columns" aria-hidden="true"></i>
+                                <span class="hide-menu">Home</span>
+                            </a>
+                        </li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{% url 'dashboard' %}" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
-                                    aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{% url 'profile' %}" aria-expanded="false">
-                                <i class="me-3 fa fa-user" aria-hidden="true"></i><span
-                                    class="hide-menu">Profile</span></a></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{% url 'completa_cadastro' %}" aria-expanded="false">
-                                <i class="me-3 fa fa-user" aria-hidden="true"></i><span
-                                    class="hide-menu">Completar Cadastro</span></a></li>
+                        <!---USUARIO--->
+                        <li class="sidebar-item" data-toggle="collapse"  data-target="#usuario" aria-expanded="false" aria-controls="usuario">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" >
+                                 <i class="me-3 fa fa-user" aria-hidden="true"></i><span class="hide-menu">Usuário</span>
+                            </a>
+                        </li>
+		                <div class="collapse" id="usuario" >
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                        href="{% url 'profile' %}" aria-expanded="false">
+                                      <span class="hide-menu">Profile</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'completa_cadastro' %}" aria-expanded="false">
+                                        <span class="hide-menu">Completar Cadastro</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard' %}" aria-expanded="false">
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+
+                        </div>
+
+                        <!---PRODUTO--->
+                        <li class="sidebar-item" data-toggle="collapse"  data-target="#produto" aria-expanded="false" aria-controls="produto">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
+                                 <i class="me-3  fas fa-align-justify" aria-hidden="true"></i><span class="hide-menu">Produto</span>
+                            </a>
+                        </li>
+                        <div class="collapse" id="produto">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'add_produto' %}" aria-expanded="false">
+                                    <span class="hide-menu">Adicionar Produto</span>
+                                </a>
+                            </li>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{% url 'account_logout' %}" aria-expanded="false">
                                 <i class="me-3 fa fa-user" aria-hidden="true"></i><span
                                     class="hide-menu">Logout</span></a></li>
+
+
+
+
+
+
+
+
+                        <!-- USUÁRIO NÃO LOGADO-->
                         {% else %}
                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{% url 'index' %}" aria-expanded="false"><i class="me-3 fa fa-columns"
