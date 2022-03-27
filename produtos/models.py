@@ -15,6 +15,7 @@ class Fornecedor(models.Model):
 
 class Produto(models.Model):
     nome_produto = models.CharField(max_length=30, null=False )
+    marca_produto = models.CharField(max_length=50, null=True)
     preco_produto = models.FloatField(null=False)
     quantidade_produto = models.IntegerField(default=0)
     descricao_produto= models.TextField(max_length=500)

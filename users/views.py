@@ -9,6 +9,9 @@ def index(request):
 def erro_404(request):
     return render(request, '404.html')
 
+def erro_403(request):
+    return render(request, '403.html')
+
 def dashboard(request):
     if request.user.is_authenticated:
         return render(request, 'dashboard.html')

@@ -27,7 +27,7 @@
           <div class="col-lg-8 col-xlg-9 col-md-7">
             <div class="card">
               <div class="card-body">
-                <form class="form-horizontal form-material mx-2" action="{% url 'add_produto' %}" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal form-material mx-2" action="{% url 'adicionar_produto' %}" method="post" enctype="multipart/form-data">
                   {% csrf_token %}
                   <table>  {{ form|crispy }}</table>
                   <button class="btn btn-success mx-auto mx-md-0 text-white" type="submit">Adicionar Produto</button>
