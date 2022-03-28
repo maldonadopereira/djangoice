@@ -36,7 +36,7 @@
                                     {% if u.foto_user == '' %}
                                     <img src="{% static 'images/users/blank.png' %}" alt=""/>
                                     {% else %}
-                                     <img src="{{ user.foto_user }}" height="150" width="150" alt="foto aqui"/>
+                                     <img src="{{ user.foto_user }}" height="150" width="150" />
                                     {% endif %}
                                     <h4 class="card-title mt-2">{{user.first_name | capfirst}}</h4>
 

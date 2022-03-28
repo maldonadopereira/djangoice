@@ -28,7 +28,7 @@
 		                <div class="collapse" id="usuario" >
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                        href="{% url 'profile' %}" aria-expanded="false">
+                                        href="{% url 'profile' user.id %}" aria-expanded="false">
                                       <span class="hide-menu">Profile</span>
                                     </a>
                                 </li>
@@ -66,6 +66,27 @@
 
                         </div>
 
+                        <!---CLIENTE--->
+                        <li class="sidebar-item" data-toggle="collapse"  data-target="#cliente" aria-expanded="false" aria-controls="cliente">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
+                                 <i class="me-3  fas fa-address-card" aria-hidden="true"></i><span class="hide-menu">Clientes</span>
+                            </a>
+                        </li>
+                        <div class="collapse" id="cliente">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'adicionar_cliente' %}" aria-expanded="false">
+                                    <span class="hide-menu">Adicionar Cliente</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'listar_cliente' %}" aria-expanded="false">
+                                    <span class="hide-menu">Listar Cliente</span>
+                                </a>
+                            </li>
+
+                        </div>
+
 
 
 
@@ -80,7 +101,7 @@
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{% url 'account_logout' %}" aria-expanded="false">
-                                <i class="me-3 fa fa-user" aria-hidden="true"></i><span
+                                <i class="me-3  fas fa-sign-out-alt" aria-hidden="true"></i><span
                                     class="hide-menu">Logout</span></a></li>
 
 

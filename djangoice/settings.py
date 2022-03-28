@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'global_permissions',
     #apps locais
     'users.apps.UsersConfig',
-    'produtos'
+    'produtos',
+    'clientes'
 ]
 
 MIDDLEWARE = [
@@ -144,6 +145,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'djangoice/static')
 ]
+# Media Files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -165,6 +170,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 # Email único
 ACCOUNT_UNIQUE_EMAIL = True
 
+LOGIN_REDIRECT_URL = 'index'
 
 
 #Crispy Forms

@@ -1,7 +1,7 @@
 from datetime import datetime
-
 from django.db import models
 from users.models import User
+from clientes.models import Cliente
 
 class Fornecedor(models.Model):
     nome_fornecedor = models.CharField(max_length=30, null=False)
@@ -26,3 +26,10 @@ class Produto(models.Model):
 
     def __str__(self):
         return self.nome_produto
+
+
+class Venda(models.Model):
+    id_produto = models.ForeignKey(Produto, default='', on_delete=models.SET_NULL, null=True)
+    id_user = models.ForeignKey(User, default='', on_delete=models.SET_NULL, null=True)
+    id_cliente = models.ForeignKey(Cliente, default='', on_delete=models.SET_NULL, null=True)
+    data_venda = models.DateTimeField(default=datetime.now, blank=True)

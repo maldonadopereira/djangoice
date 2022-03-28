@@ -19,9 +19,14 @@ def dashboard(request):
     else:
         return redirect('index')
 
-def profile(request):
+def profile(request, user_id):
     if request.user.is_authenticated:
-        return render(request, 'profile.html')
+        user = get_object_or_404(User, pk=user_id)
+
+        context = {
+            'user': user
+        }
+        return render(request, 'profile.html', context)
 
     else:
         return redirect('index'),
