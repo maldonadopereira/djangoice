@@ -49,3 +49,17 @@ def detalhar_produto(request, produto_id):
         'produto': produto
     }
     return render(request, 'produtos/detalhar_produto.html', produto_a_exibir)
+
+def buscar(request):
+    lista_produtos = Produto.objects.order_by('nome_produto')
+
+    if 'buscar' in request.GET:
+        nome_a_buscar = request.GET['buscar']
+        if buscar:
+            lista_produtos = lista_produtos.filter(nome_produto__icontains=nome_a_buscar)
+
+    dados = {
+        'produtos': lista_produtos
+    }
+
+    return render(request, 'produtos/buscar.html', dados)

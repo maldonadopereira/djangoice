@@ -1,0 +1,13 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+                    <ul class="navbar-nav me-auto mt-md-0 ">
+                        <li class="nav-item hidden-sm-down">
+                            <form class="app-search ps-3" action="{% url 'buscar' %}">
+                                <input type="text" class="form-control" placeholder="Buscar produtos" name="buscar">
+                                <a class="srh-btn" type="submit"><i class="ti-search"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+
+

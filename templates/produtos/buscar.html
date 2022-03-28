@@ -11,19 +11,18 @@
     <div class="page-breadcrumb">
         <div class="row align-items-center">
             <div class="col-md-6 col-8 align-self-center">
-                <h3 class="page-title mb-0 p-0">Listar Produtos</h3>
+                <h3 class="page-title mb-0 p-0">Buscar Produtos</h3>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Listar Produtos</li>
+                            <li class="breadcrumb-item active" aria-current="page">Buscar Produtos</li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </div>
     </div>
-{% include 'partials/__buscar.html' %}
         <!--- Tabela -->
             <div class="row">
                     <!-- column -->
@@ -56,10 +55,12 @@
                                           <td><a href="{% url 'editar_produto' produto.id  %}" >Editar</a></td>
                                         </tr>
                                        {% endfor %}
-                                    </tbody>
+                                        </tbody>
                                 </table>
                                     {% else %}
-                                    <p>Ainda não há Produtos cadastrados</p>
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                    <p>Produto não encontrado</p>
+                                    </div>
                                     {% endif %}
                             </div>
                         </div>
