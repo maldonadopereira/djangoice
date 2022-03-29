@@ -14,7 +14,7 @@ def erro_403(request):
 
 def dashboard(request):
     if request.user.is_authenticated:
-        return render(request, 'dashboard.html')
+        return render(request, 'users/dashboard.html')
 
     else:
         return redirect('index')
@@ -26,7 +26,7 @@ def profile(request, user_id):
         context = {
             'user': user
         }
-        return render(request, 'profile.html', context)
+        return render(request, 'users/profile.html', context)
 
     else:
         return redirect('index'),
@@ -35,7 +35,7 @@ def profile(request, user_id):
 
 def completa_cadastro(request):
     if request.user.is_authenticated:
-        return render(request, 'completa_cadastro.html')
+        return render(request, 'users/completa_cadastro.html')
     else:
         return redirect('index')
 
@@ -55,6 +55,6 @@ def atualiza_cadastro(request):
             u.save()
             return redirect('profile')
         else:
-            return render(request, 'completa_cadastro.html')
+            return render(request, 'users/completa_cadastro.html')
     else:
         return redirect('index')

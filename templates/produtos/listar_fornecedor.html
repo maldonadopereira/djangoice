@@ -11,19 +11,18 @@
     <div class="page-breadcrumb">
         <div class="row align-items-center">
             <div class="col-md-6 col-8 align-self-center">
-                <h3 class="page-title mb-0 p-0">Listar Produtos</h3>
+                <h3 class="page-title mb-0 p-0">Listar Fornecedor</h3>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Listar Produtos</li>
+                            <li class="breadcrumb-item active" aria-current="page">Listar Fornecedor</li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </div>
     </div>
-{% include 'partials/__buscar.html' %}
         <!--- Tabela -->
             <div class="row">
                     <!-- column -->
@@ -31,38 +30,31 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    {% if produtos %}
+                                    {% if fornecedores %}
                                     <table class="table user-table no-wrap">
                                       <thead class="thead-light">
                                         <tr>
                                           <th class="border-top-0">#</th>
-                                          <th class="border-top-0">Nome do Produto</th>
-                                          <th class="border-top-0">Marca</th>
-                                          <th class="border-top-0">Fornecedor</th>
-                                          <th class="border-top-0">Quantidade</th>
-                                          <th class="border-top-0">Disponibilidade</th>
-                                          <th class="border-top-0"></th>
-                                          <th class="border-top-0"></th>
+                                          <th class="border-top-0">Nome do Fornecedor</th>
+                                          <th class="border-top-0">Telefone</th>
+                                          <th class="border-top-0">Email</th>
+
+
                                         </tr>
                                       </thead>
                                       <tbody>
-                                      {% for produto in produtos %}
+                                      {% for fornecedor in fornecedores %}
                                         <tr>
-                                          <th scope="row">{{produto.id}}</th>
-                                          <td>{{produto.nome_produto}}</td>
-                                          <td>{{produto.marca_produto}}</td>
-                                          <td>{{produto.fornecedor}}</td>
-                                          <td>{{produto.quantidade_produto}}</td>
-                                          <td>{{produto.disponivel}}</td>
-
-                                          <td><a href="{% url 'detalhar_produto' produto.id  %}" >Detalhar</a></td>
-                                          <td><a href="{% url 'editar_produto' produto.id  %}" >Editar</a></td>
+                                          <th scope="row">{{fornecedor.id}}</th>
+                                          <td>{{fornecedor.nome_fornecedor}}</td>
+                                          <td>{{fornecedor.telefone_fornecedor}}</td>
+                                          <td>{{fornecedor.email_fornecedor}}</td>
                                         </tr>
                                        {% endfor %}
                                     </tbody>
                                 </table>
                                     {% else %}
-                                    <p>Ainda não há Produtos cadastrados</p>
+                                    <p>Ainda não há Fornecedores cadastrados</p>
                                     {% endif %}
                             </div>
                         </div>

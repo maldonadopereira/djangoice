@@ -13,6 +13,9 @@ class Fornecedor(models.Model):
     telefone_fornecedor = models.CharField(max_length=15, null=False)
     email_fornecedor = models.CharField(max_length=50, null=False)
 
+    def __str__(self):
+        return self.nome_fornecedor
+
 class Produto(models.Model):
     nome_produto = models.CharField(max_length=30, null=False )
     marca_produto = models.CharField(max_length=50, null=True)
@@ -22,7 +25,8 @@ class Produto(models.Model):
     disponivel = models.BooleanField(default=False)
     data_produto = models.DateTimeField(default=datetime.now, blank=True)
     user = models.ForeignKey(User, default='', on_delete=models.SET_NULL, null=True)
-    fornecedor = models.CharField(max_length=30, null=False)
+    fornecedor = models.ForeignKey(Fornecedor, default='', on_delete=models.SET_NULL, null=True)
+    #fornecedor = models.CharField(max_length=30, null=False )
 
     def __str__(self):
         return self.nome_produto

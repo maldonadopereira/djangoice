@@ -11,12 +11,12 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="page-title mb-0 p-0">Adicionar Produto</h3>
+                        <h3 class="page-title mb-0 p-0">Adicionar Fornecedor</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Adicionar Produto</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Adicionar Fornecedor/li>
                                 </ol>
                             </nav>
                         </div>
@@ -27,12 +27,10 @@
           <div class="col-lg-8 col-xlg-9 col-md-7">
             <div class="card">
               <div class="card-body">
-                <form class="form-horizontal form-material mx-2" action="{% url 'adicionar_produto' %}" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal form-material mx-2" action="{% url 'adicionar_fornecedor' %}" method="post" enctype="multipart/form-data">
                   {% csrf_token %}
-                  <table>
-                      {{ form|crispy }}
-                      <button class="btn btn-success mx-auto mx-md-0 text-white" type="submit">Adicionar Produto</button>
-                  </table>
+                  <table>  {{ form|crispy }}</table>
+                  <button class="btn btn-success mx-auto mx-md-0 text-white" type="submit">Adicionar Fornecedor</button>
                 </form>
               </div>
             </div>
