@@ -116,3 +116,8 @@ def listar_fornecedor(request):
         return render(request, 'produtos/listar_fornecedor.html', dados)
 
 
+def buscar_cep(requests):
+    cep = input('CEP: ')
+    request = requests.get('viacep.com.br/ws/{}/json/'.format(cep))
+    print(request.json())
+

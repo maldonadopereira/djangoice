@@ -14,12 +14,12 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="page-title mb-0 p-0">Profile</h3>
+                        <h3 class="page-title mb-0 p-0">Completar Cadastro</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Completar Cadastro</li>
                                 </ol>
                             </nav>
                         </div>
@@ -32,7 +32,7 @@
                     <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-horizontal form-material mx-2" action="{% url 'atualiza_cadastro' %}" method="post" enctype="multipart/form-data" >
+                                <form class="form-horizontal form-material mx-2" action="{% url 'atualiza_cadastro' user.id %}" method="post" enctype="multipart/form-data" >
                                     {% csrf_token %}
                                     <input type="text" id="user_id" class="form-control" name="user_id" value="{{user.id}}" hidden>
 
@@ -84,7 +84,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="file"><b>Adicionar foto</b></label>
+                                        <label for="foto_user"><b>Adicionar foto</b></label>
                                         <input type="file" class="form-control" name="foto_user" id="foto_user">
                                     </div>
                                     <div class="form-group">

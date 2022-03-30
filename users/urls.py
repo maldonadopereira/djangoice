@@ -7,6 +7,6 @@ urlpatterns = [
     path('erro_403', views.erro_403, name='403'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('accounts/profile/<int:user_id>', views.profile, name='profile'),
-    path('cadastro', views.completa_cadastro, name='completa_cadastro'),
-    path('atualiza_cadastro', views.atualiza_cadastro, name='atualiza_cadastro'),
+    path('cadastro/<int:user_id>', views.completa_cadastro, name='completa_cadastro'),
+    path('atualiza_cadastro/<int:user_id>', views.atualiza_cadastro, name='atualiza_cadastro'),
 ]

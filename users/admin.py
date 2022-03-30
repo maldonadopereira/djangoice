@@ -9,7 +9,7 @@ class UserAdmin(auth_admin.UserAdmin):
     add_form = UserCreationForm
     model = User
     list_display_links = ('username',)
-    list_display = ('id', 'username', 'email', 'telefone', )
+    list_display = ('id', 'username', 'email', 'telefone', 'foto_user')
     fieldsets = auth_admin.UserAdmin.fieldsets + (('Informações Adicionais',
                   {'fields': ('telefone', 'cep', 'endereco', 'foto_user')
                 }),)

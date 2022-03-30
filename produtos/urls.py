@@ -9,6 +9,6 @@ urlpatterns = [
     path('buscar/', views.buscar, name='buscar'),
     path('adicionar_fornecedor', views.adicionar_fornecedor, name='adicionar_fornecedor'),
     path('listar_fornecedor', views.listar_fornecedor, name='listar_fornecedor'),
-
+    path('buscar_cep', views.buscar_cep, name='buscar_cep'),
 
 ]

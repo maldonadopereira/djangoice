@@ -33,13 +33,15 @@ def profile(request, user_id):
 
 
 
-def completa_cadastro(request):
-    if request.user.is_authenticated:
-        return render(request, 'users/completa_cadastro.html')
-    else:
-        return redirect('index')
+def completa_cadastro(request, user_id):
+        user = get_object_or_404(User, pk=user_id)
+        dados = {
+            'user': user
+        }
+        return render(request, 'users/completa_cadastro.html', dados)
 
-def atualiza_cadastro(request):
+
+def atualiza_cadastro(request, user_id):
     if request.user.is_authenticated:
         if request.method =='POST':
             user_id = request.POST['user_id']
@@ -50,11 +52,9 @@ def atualiza_cadastro(request):
             u.telefone = request.POST['telefone']
             u.cep = request.POST['cep']
             u.endereco = request.POST['endereco']
-            if 'foto_user' in request.POST:
-                u.foto_user = request.POST['foto_user']
+            if 'foto_user' in request.FILES:
+                u.foto_user = request.FILES['foto_user']
             u.save()
-            return redirect('profile')
-        else:
             return render(request, 'users/completa_cadastro.html')
-    else:
-        return redirect('index')
+        else:
+            return redirect('index'),

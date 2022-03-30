@@ -6,4 +6,4 @@ class User(AbstractUser):
     telefone = models.CharField(max_length=15, default='')
     cep = models.CharField(max_length=10, default='')
     endereco = models.CharField(max_length=150, default='')
-    foto_user = models.ImageField(upload_to='media/fotos/%d/%m/%Y', blank=True, default='', null=True)
+    foto_user = models.ImageField(upload_to='fotos/%d/%m/%Y', blank=True, default='')

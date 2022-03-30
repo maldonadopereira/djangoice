@@ -29,7 +29,9 @@
               <div class="card-body">
                 <form class="form-horizontal form-material mx-2" action="{% url 'adicionar_fornecedor' %}" method="post" enctype="multipart/form-data">
                   {% csrf_token %}
-                  <table>  {{ form|crispy }}</table>
+                  <table>  {{ form|crispy }}
+
+                  </table>
                   <button class="btn btn-success mx-auto mx-md-0 text-white" type="submit">Adicionar Fornecedor</button>
                 </form>
               </div>
