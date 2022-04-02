@@ -10,6 +10,7 @@ django-allauth = "*"
 psycopg2-binary = "*"
 django-crispy-forms = "*"
 pillow = "*"
+whitenoise = "*"
 
 [dev-packages]
 
