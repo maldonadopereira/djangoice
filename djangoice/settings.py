@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     #apps locais
     'users.apps.UsersConfig',
     'produtos',
-    'clientes'
+    'clientes',
+    'vendas',
+    'estoque',
 ]
 
 MIDDLEWARE = [

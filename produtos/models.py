@@ -17,17 +17,17 @@ class Fornecedor(models.Model):
         return self.nome_fornecedor
 
 class Produto(models.Model):
-    nome_produto = models.CharField(max_length=30, null=False )
+    nome_produto = models.CharField(max_length=50, null=False, unique=True )
     marca_produto = models.CharField(max_length=50, null=True)
-    preco_produto = models.FloatField(null=False)
-    quantidade_produto = models.IntegerField(default=0)
-    descricao_produto= models.TextField(max_length=500)
-    disponivel = models.BooleanField(default=False)
-    data_produto = models.DateTimeField(default=datetime.now, blank=True)
+    preco_produto = models.DecimalField(null=False, decimal_places=2, max_digits=10)
+    quantidade_produto = models.PositiveIntegerField(default=0, null=False)
+    quantidade_minima = models.PositiveIntegerField(default=0, null=False)
+    descricao_produto= models.TextField(max_length=500, null=True)
     user = models.ForeignKey(User, default='', on_delete=models.SET_NULL, null=True)
     fornecedor = models.ForeignKey(Fornecedor, default='', on_delete=models.SET_NULL, null=True)
-    #fornecedor = models.CharField(max_length=30, null=False )
 
+    class Meta:
+        ordering = ('nome_produto',)
     def __str__(self):
         return self.nome_produto
 

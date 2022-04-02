@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+{% include 'partials/__header.html' %}
+{% include 'partials/__sidebar.html' %}
+
+
+<div class="page-wrapper">
+    <div class="page-breadcrumb">
+        <div class="row align-items-center">
+            <div class="col-md-6 col-8 align-self-center">
+                <h3 class="page-title mb-0 p-0">Lista Entradas</h3>
+                <div class="d-flex align-items-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Lista Entradas</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+    <h2>Entrada</h2>
+       <div  style="text-align: right;">
+           <a href="{% url 'entrada_estoque_add' %}" class="btn btn-secondary btn-lg d-none d-md-inline-block text-white">
+               <span class="fas fa-plus" >Adicionar</span>
+           </a>
+       </div>
+        {% if estoque %}
+         <table class="table user-table no-wrap">
+                                      <thead class="thead-light">
+                                        <tr>
+                                          <th class="border-top-0">#</th>
+                                          <th class="border-top-0">Movimento</th>
+                                          <th class="border-top-0">Data</th>
+                                          <th class="border-top-0">Funcionario</th>
+                                          <th class="border-top-0"></th>
+
+
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      {% for e in estoque %}
+                                        <tr>
+                                          <th scope="row">{{e.id}}</th>
+                                          <td>{{e.movimento}}</td>
+                                          <td>{{e.created}}</td>
+                                          <td>{{e.funcionario.first_name}}</td>
+                                          <td><a href="{% url 'entrada_estoque_detail' e.id  %}" >Detalhar</a></td>
+                                        </tr>
+                                       {% endfor %}
+                                    </tbody>
+                                </table>
+
+    {% else %}
+        <p class="alert alert-warning">Sem Itens</p>
+    {% endif %}
+
+
+    </div>
+</div>
+
+{% include 'partials/__footer.html' %}
+{% endblock %}

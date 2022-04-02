@@ -26,6 +26,11 @@
 {% include 'partials/__buscar.html' %}
         <!--- Tabela -->
             <div class="row">
+                <div  style="text-align: right;">
+                    <a href="{% url 'adicionar_fornecedor' %}" class="btn btn-secondary btn-lg d-none d-md-inline-block text-white">
+                        <span class="fas fa-plus" >Adicionar</span>
+                    </a>
+                </div>
                     <!-- column -->
                     <div class="col-sm-12">
                         <div class="card">

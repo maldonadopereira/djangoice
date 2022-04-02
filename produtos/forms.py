@@ -1,6 +1,6 @@
 from django import forms
 
-from produtos.models import Produto, Fornecedor
+from .models import Produto, Fornecedor
 
 
 class AdicionarProduto(forms.ModelForm):
@@ -12,7 +12,7 @@ class AdicionarProduto(forms.ModelForm):
     class Meta:
         model = Produto
         fields = [
-            'nome_produto', 'marca_produto', 'preco_produto', 'quantidade_produto', 'descricao_produto',
+            'nome_produto', 'marca_produto', 'preco_produto', 'descricao_produto',
         ]
 
 

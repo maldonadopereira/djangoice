@@ -53,28 +53,18 @@
                         </li>
                         <div class="collapse" id="produto">
                             <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'adicionar_produto' %}" aria-expanded="false">
-                                    <span class="hide-menu">Adicionar Produtos</span>
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'listar_fornecedor' %}" aria-expanded="false">
+                                    <span class="hide-menu">Fornecedores</span>
                                 </a>
                             </li>
 
                             <li class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'listar_produto' %}" aria-expanded="false">
-                                    <span class="hide-menu">Listar Produtos</span>
+                                    <span class="hide-menu">Produtos</span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'adicionar_fornecedor' %}" aria-expanded="false">
-                                    <span class="hide-menu">Adicionar Fornecedor</span>
-                                </a>
-                            </li>
 
-                            <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'listar_fornecedor' %}" aria-expanded="false">
-                                    <span class="hide-menu">Listar Fornecedor</span>
-                                </a>
-                            </li>
 
 
                         </div>
@@ -100,24 +90,27 @@
 
                         </div>
 
+                        <!---ESTOQUE--->
+                        <li class="sidebar-item" data-toggle="collapse"  data-target="#estoque" aria-expanded="false" aria-controls="estoque">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
+                                 <i class="me-3  fas fa-align-justify" aria-hidden="true"></i><span class="hide-menu">Estoque</span>
+                            </a>
+                        </li>
+                        <div class="collapse" id="estoque">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'entrada_estoque_list' %}" aria-expanded="false">
+                                    <span class="hide-menu">Listar Entradas</span>
+                                </a>
+                            </li>
 
 
 
-
-
-
-
-
-
-
-
-
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{% url 'account_logout' %}" aria-expanded="false">
-                                <i class="me-3  fas fa-sign-out-alt" aria-hidden="true"></i><span
-                                    class="hide-menu">Logout</span></a></li>
-
-
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'saida_estoque' %}" aria-expanded="false">
+                                    <span class="hide-menu">Saída</span>
+                                </a>
+                            </li>
+                        </div>
 
 
 
