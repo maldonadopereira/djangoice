@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+0ghsbi&dac0dysvk_pv5_d)6wc13phu%0tj#x8r3gqs7s#ic@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -100,10 +100,10 @@ WSGI_APPLICATION = 'djangoice.wsgi.application'
 DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'djangoice',
-            'USER': 'david',
-            'PASSWORD': '3284',
-            'HOST': '127.0.0.1',
+            'NAME': 'ddkh2abb99k6pa',
+            'USER': 'vpqibtvongorql',
+            'PASSWORD': '54144c4743024e936ce6ad3fd528ec60317ccfc27853d7aa17cbe5d7e82b947e',
+            'HOST': 'ec2-3-209-61-239.compute-1.amazonaws.com',
             'PORT': '5432',
         }
     }
