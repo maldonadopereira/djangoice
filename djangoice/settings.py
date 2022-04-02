@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+0ghsbi&dac0dysvk_pv5_d)6wc13phu%0tj#x8r3gqs7s#ic@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['djangoice.herokuapp.com']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'global_permissions',
+    'whitenoise.runserver_nostatic'
     #apps locais
     'users.apps.UsersConfig',
     'produtos',
@@ -60,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'djangoice.urls'
@@ -147,6 +149,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'djangoice/static')
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Media Files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
