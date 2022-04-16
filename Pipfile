@@ -10,6 +10,9 @@ django-allauth = "*"
 psycopg2-binary = "*"
 django-crispy-forms = "*"
 pillow = "*"
+requests = "*"
+validate-docbr = "*"
+django-localflavor = "*"
 
 [dev-packages]
 

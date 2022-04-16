@@ -27,6 +27,7 @@
             <div class="row">
                     <!-- column -->
                     <div class="col-sm-12">
+                        <a href="{% url 'adicionar_fornecedor' %}" class="btn btn-success mx-auto mx-md-0 text-white"><span class="fas fa-plus-circle">Cadastrar Fornecedor</span></a>
                         <div class="card">
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -38,6 +39,8 @@
                                           <th class="border-top-0">Nome do Fornecedor</th>
                                           <th class="border-top-0">Telefone</th>
                                           <th class="border-top-0">Email</th>
+                                          <th class="border-top-0"></th>
+                                          <th class="border-top-0"></th>
 
 
                                         </tr>
@@ -49,6 +52,8 @@
                                           <td>{{fornecedor.nome_fornecedor}}</td>
                                           <td>{{fornecedor.telefone_fornecedor}}</td>
                                           <td>{{fornecedor.email_fornecedor}}</td>
+                                          <td><a href="{% url 'detalhar_fornecedor' fornecedor.id  %}" class="btn btn-success mx-auto mx-md-0 text-white" >Detalhar</a></td>
+                                          <td><a href="{% url 'editar_fornecedor' fornecedor.id  %}" class="btn btn-success mx-auto mx-md-0 text-white">Editar</a></td>
                                         </tr>
                                        {% endfor %}
                                     </tbody>

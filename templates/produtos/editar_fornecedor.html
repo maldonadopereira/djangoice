@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+{% include 'partials/__header.html' %}
+{% include 'partials/__sidebar.html' %}
+<div class="page-wrapper">
+    <h1>Você está editando o produto {{ produto.nome_produto }}</h1>
+</div>
+
+
+{% include 'partials/__footer.html' %}
+{% endblock %}

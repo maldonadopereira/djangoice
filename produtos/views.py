@@ -50,12 +50,6 @@ def verificar_disponibilidade(request, produto_id):
     return produto
 
 
-
-
-
-
-
-
 def listar_produto(request):
     if request.user.is_authenticated:
         produtos = Produto.objects.order_by('id')
@@ -114,6 +108,25 @@ def listar_fornecedor(request):
             'fornecedores': fornecedores
         }
         return render(request, 'produtos/listar_fornecedor.html', dados)
+
+def editar_fornecedor(request, fornecedor_id):
+    fornecedor = get_object_or_404(Fornecedor, pk=fornecedor_id)
+    fornecedor_a_editar = {
+        'fornecedor': fornecedor
+    }
+    return render(request, 'produtos/editar_fornecedor.html', fornecedor_a_editar)
+
+
+
+def detalhar_fornecedor(request, fornecedor_id):
+    fornecedor = get_object_or_404(Fornecedor, pk=fornecedor_id)
+    fornecedor_a_exibir = {
+        'fornecedor': fornecedor
+    }
+    return render(request, 'produtos/detalhar_fornecedor.html', fornecedor_a_exibir)
+
+
+
 
 
 def buscar_cep(requests):
